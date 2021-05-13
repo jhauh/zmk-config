@@ -45,13 +45,13 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   		 |  U    |  I    |  O   |   P   | BSPC  |
 // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   		 |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   		 |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE/BSPC | CTRL  |  GUI  |
+//                     | ALT  | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC | CTRL  |  GUI  |
 			bindings = <
-&gresc    &kp N1 &kp N2 	 &kp N3   		&kp N4   	&kp N5                     			&kp N6 			&kp N7   	&kp N8    	&kp N9  	&kp N0   &kp BACKSLASH
-&kp TAB   &kp Q  &kp W  	 &kp E    		&kp R    	&kp T                      			&kp Y  			&kp U    	&kp I     	&kp O   	&kp P    &kp BSPC
-&kp LCTRL &kp A  &hm LALT S  &hm LCTRL D	&hm LSHFT F	&kp G                      			&kp H  			&hm RSHFT J &hm RCTRL K	&hm LALT L	&kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X  	 &kp C    		&kp V    	&kp B 		&kp LBKT   	&kp RBKT 	&kp N  			&kp M    	&kp COMMA 	&kp DOT 	&kp FSLH &kp RSHFT
-                        	 &kp RALT 		&kp LGUI 	&mo LOWER	&kp RET		&kp SPACE 	&lt RAISE BSPC	&kp RCTRL 	&kp GUI
+&gresc    &kp N1 &kp N2 	 &kp N3   		&kp N4   	&kp N5                     				&kp N6 			&kp N7   	&kp N8    	&kp N9  	&kp N0   	  &kp BACKSLASH
+&kp TAB   &kp Q  &kp W  	 &kp E    		&kp R    	&kp T                      				&kp Y  			&kp U    	&kp I     	&kp O   	&kp P    	  &kp BSPC
+&kp LCTRL &kp A  &hm LALT S  &hm LCTRL D	&hm LSHFT F	&kp G                      				&kp H  			&hm RSHFT J &hm RCTRL K	&hm LALT L	&hm LGUI SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X  	 &kp C    		&kp V    	&kp B 			&kp LBKT   	&kp RBKT 	&kp N  			&kp M    	&kp COMMA 	&kp DOT 	&kp FSLH 	  &kp RSHFT
+                        	 &kp RALT 		&kp LGUI 	&lt LOWER ESC	&kp RET		&kp SPACE 	&lt RAISE BSPC	&kp RCTRL 	&kp GUI
 			>;
 		};
 
@@ -59,13 +59,13 @@
 // --------------------------------------------------------------------------------------------------------
 // |  ~ |     |     |      |      |      |                   |      |       |       |      |       | PTSCN |
 // |    |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |  DEL  |
-// |    |  !  |  @  |  #   |  $   |  %   |                   |  <-  |   v   |  ^    |  ->  |   =   |   -   |
+// |    |  !  |  @  |  #   |  $   |  %   |                   |  <-  |   v   |  ^    |  ->  |       |       |
 // |    |  ^  |  &  |  *   |  (   |  )   |        |  |       | <<-  |  vv   |  ^^   |  ->> |       |	   |
 //                  |      |      |      |        |  |       |  DEL |       |       |
 			bindings = <
 &kp TILDE &trans 	&trans 	  &trans  	&trans 		&trans                       &trans    &trans    &trans    &trans    &trans    	&kp PRINTSCREEN
 &trans	  &kp N1    &kp N2 	  &kp N3  	&kp N4  	&kp N5                       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    	&kp DEL
-&trans	  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp EQUAL  &kp MINUS
+&trans	  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans  	&trans
 &trans    &kp CARET &kp AMPS  &kp STAR	&kp LPAR    &kp RPAR  &trans   &trans    &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans  	&trans
                      		  &trans    &trans      &trans    &trans   &trans    &kp DEL   &trans	 &trans
 			>;

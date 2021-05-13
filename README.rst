@@ -3,7 +3,7 @@ Lily58 layout by jhauh
 
 Standard zmk-config repo, push to kick off a GitHub Actions workflow
 which will build the keyboard firmware to your liking and spit out
-a zip of uf2 files in the Releases section of the repo.
+a zip of uf2 files in the Actions section of the repo.
 
 Building Locally
 ----------------

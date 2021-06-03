@@ -11,8 +11,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-#define LOWER   1
-#define RAISE   2
+#define GAME    1
+#define LOWER   2
+#define RAISE   3
 
 
 &lt {
@@ -29,7 +30,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             quick_tap_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -41,7 +42,14 @@
     	    bindings = <&kp ESC>, <&kp GRAVE>;
     	    mods = <(MOD_LALT|MOD_LSFT|MOD_RALT|MOD_RSFT)>;
     	};
-
+        hold_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TOG";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&tog>;
+        };
     };
 
 
@@ -50,18 +58,35 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// -----------------------------------------------------------------------------------------------------------------
-// | `/ESC |  1  |  2  |  3   |  4   |  5   |                   |  6   		 |  7    |  8    |  9   |   0   |   \   |
-// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   		 |  U    |  I    |  O   |   P   | BSPC  |
-// |CTRL/TAB| A  |  S  |  D   |  F   |  G   |                   |  H   		 |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   		 |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | ALT  | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC | CTRL/TAB |  GUI  |
+// ------------------------------------------------------------------------------------------------------------------
+// | `/ESC |  1  |  2  |  3  |  4   |  5   |                   |  6   		 |  7    |  8    |  9   |   0   |   \   |
+// |  TAB  |  Q  |  W  |  E  |  R   |  T   |                   |  Y   		 |  U    |  I    |  O   |   P   | BSPC  |
+// |CTRL/TAB| A  |  S  |  D  |  F   |  G   |                   |  H   		 |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C  |  V   |  B   |   "["  |  |  "]"  |  N   		 |  M    |  ,    |  .   |   /   | SHIFT |
+//                  |ALT/GAME| GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC | CTRL/TAB |  GUI  |
 			bindings = <
 &gresc    &kp N1 &kp N2 	 &kp N3   		&kp N4   	&kp N5                     				&kp N6 			&kp N7   	&kp N8    	&kp N9  	&kp N0   	  &kp BACKSLASH
 &kp TAB   &kp Q  &kp W  	 &kp E    		&kp R    	&kp T                      				&kp Y  			&kp U    	&kp I     	&kp O   	&kp P    	  &kp BSPC
 &mt LCTRL TAB &hm LGUI A  &hm LALT S  &hm LCTRL D	&hm LSHFT F	&kp G                      		&kp H  			&hm RSHFT J &hm RCTRL K	&hm LALT L	&hm LGUI SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X  	 &kp C    		&kp V    	&kp B 			&kp LBKT   	&kp RBKT 	&kp N  			&kp M    	&kp COMMA 	&kp DOT 	&kp FSLH 	  &kp RSHFT
-                        	 &kp RALT 		&kp LGUI 	&lt LOWER ESC	&kp RET		&kp SPACE 	&lt RAISE BSPC	&mt RCTRL TAB 	&kp GUI
+                 &hold_tog RALT GAME 		&kp LGUI 	&lt LOWER ESC	&kp RET		&kp SPACE 	&lt RAISE BSPC	&mt RCTRL TAB 	&kp GUI
+			>;
+		};
+		
+		game_layer {
+// Drops the home row mods so you can WASD
+// -----------------------------------------------------------------------------------------------------------------
+// | `/ESC |  1  |  2  |  3   |  4   |  5   |                   |  6   		 |  7    |  8    |  9   |   0   |   \   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   		 |  U    |  I    |  O   |   P   | BSPC  |
+// |CTRL/TAB| A  |  S  |  D   |  F   |  G   |                   |  H   		 |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   		 |  M    |  ,    |  .   |   /   | SHIFT |
+//                   |ALT/GAME| GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC | CTRL/TAB |  GUI  |
+			bindings = <
+&gresc    &kp N1 &kp N2 	 &kp N3   		&kp N4   	&kp N5                     				&kp N6 			&kp N7   	&kp N8    	&kp N9  	&kp N0   	  &kp BACKSLASH
+&kp TAB   &kp Q  &kp W  	 &kp E    		&kp R    	&kp T                      				&kp Y  			&kp U    	&kp I     	&kp O   	&kp P    	  &kp BSPC
+&kp LCTRL &kp A  &kp S  	 &kp D			&kp F		&kp G                      				&kp H  			&kp J 		&kp K		&kp L		&kp SEMI 	  &kp SQT
+&kp LSHFT &kp Z  &kp X  	 &kp C    		&kp V    	&kp B 			&kp LBKT   	&kp RBKT 	&kp N  			&kp M    	&kp COMMA 	&kp DOT 	&kp FSLH 	  &kp RSHFT
+                 &hold_tog RALT GAME		&kp LGUI 	&lt LOWER ESC	&kp RET		&kp SPACE 	&lt RAISE BSPC	&mt RCTRL TAB 	&kp GUI
 			>;
 		};
 

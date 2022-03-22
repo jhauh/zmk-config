@@ -1,5 +1,5 @@
-Lily58 & Corne layouts by jhauh
-===============================
+Lily58 & Corne & Ferris Sweep layouts by jhauh
+==============================================
 
 Standard zmk-config repo, push to kick off a GitHub Actions workflow
 which will build the keyboard firmware to your liking and spit out
@@ -32,4 +32,11 @@ Corne
 .. image:: ./corne_layout.png
 
 `(KLE link) <http://www.keyboard-layout-editor.com/#/gists/be3668c5e614b14871b6f26c297686a5>`_
+
+Ferris Sweep
+++++++++++++
+
+.. image:: ./ferris_layout.png
+
+`(KLE link) <http://www.keyboard-layout-editor.com/#/gists/7b49b1dd16d8bb93704317a0d8d27787>`_
 

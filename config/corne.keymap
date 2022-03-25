@@ -62,28 +62,28 @@
 // -----------------------------------------------------------------------------------------------------------------
 // | `/ESC |  Q  |  W  |  E  |  R   |  T   |                   |  Y   	    |  U    |  I    |  O   |   P   |  BSPC  |
 // |CTRL/TAB| A  |  S  |  D  |  F   |  G   |                   |  H         |  J    |  K    |  L   |   ;   |   '    |
-// | SHIFT |  Z  |  X  |  C  |  V   |  B   |                   |  N   	    |  M    |  ,    |  .   |   /   | \/GAME |
-//                           | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC |ALT/ADJUST|
+// | SHIFT |  Z  |  X  |  C  |  V   |  B   |                   |  N   	    |  M    |  ,    |  .   |   /   |\/ADJUST|
+//                           | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC |ALT/GAME|
 			bindings = <
-&gresc    &kp Q  &kp W  	 &kp E    	    &kp R    	    &kp T       &kp Y  	    &kp U    	    &kp I     	&kp O       &kp P    	  &kp BSPC
+&gresc        &kp Q       &kp W       &kp E    	    &kp R    	    &kp T       &kp Y  	    &kp U    	    &kp I     	&kp O       &kp P    	  &kp BSPC
 &hm LCTRL TAB &hm LGUI A  &hm LALT S  &hm LCTRL D   &hm LSHFT F	    &kp G       &kp H  	    &hm RSHFT J     &hm RCTRL K	&hm LALT L  &hm LGUI SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X  	 &kp C    	    &kp V    	    &kp B 	&kp N  	    &kp M    	    &kp COMMA 	&kp DOT     &kp FSLH 	  &lt ADJUST BSLH
-                  		 &kp LGUI 	    &lt LOWER ESC   &kp RET	&kp SPACE   &lt RAISE BSPC  &hold_tog RALT GAME
+&kp LSHFT     &kp Z  	  &kp X       &kp C    	    &kp V    	    &kp B 	&kp N  	    &kp M    	    &kp COMMA 	&kp DOT     &kp FSLH 	  &lt ADJUST BSLH
+                  		      &kp LGUI 	    &lt LOWER ESC   &kp RET	&kp SPACE   &lt RAISE BSPC  &hold_tog RALT GAME
 			>;
 		};
 		
 		game_layer {
 // Drops the home row mods so you can WASD
 // -----------------------------------------------------------------------------------------------------------------
-// | `/ESC |  Q  |  W  |  E   |  R   |  T   |                   |  Y   		 |  U    |  I    |  O   |   P   | BSPC  |
-// |CTRL/TAB| A  |  S  |  D   |  F   |  G   |                   |  H   		 |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   		 |  M    |  ,    |  .   |   /   | SHIFT |
-//                            | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC | CTRL/TAB |GUI |
+// | `/ESC |  Q  |  W  |  E  |  R   |  T   |                   |  Y   	    |  U    |  I    |  O   |   P   |  BSPC  |
+// |CTRL/TAB| A  |  S  |  D  |  F   |  G   |                   |  H 	    |  J    |  K    |  L   |   ;   |   '    |
+// | SHIFT |  Z  |  X  |  C  |  V   |  B   |                   |  N   	    |  M    |  ,    |  .   |   /   |\/ADJUST|
+//                           | GUI  |LOW/ESC| ENTER |  | SPACE | RAISE/BSPC |ALT/GAME|
 			bindings = <
 &trans	&trans  &trans	&trans	     &trans 	  &trans              &trans  	&trans    &trans    &trans    &trans    &trans
 &trans	&kp A  	&kp S  	&kp D	     &kp F  	  &trans              &trans  	&kp J 	  &kp K	    &kp L     &kp SEMI  &trans
 &trans	&trans  &trans	&trans	     &trans 	  &trans              &trans  	&trans    &trans    &trans    &trans    &trans
-                        &trans 	     &trans       &trans	      	  &trans    &trans    &hold_tog RALT GAME
+                        &trans 	     &trans       &trans	      &trans    &trans    &hold_tog RALT GAME
 			>;
 		};
 
@@ -94,10 +94,10 @@
 // |    |  ^  |  &  |  *   |  (   |  )   |                   | <<-  |  vv   |  ^^ |  ->> |       | PTSCN |
 //                         |      |      |        |  |       |  DEL |       |
 			bindings = <
-&kp GRAVE &kp N1    &kp N2    &kp N3  	&kp N4      &kp N5              &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     &kp DEL
-&trans	  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans     &trans
-&trans    &kp CARET &kp AMPS  &kp STAR	&kp LPAR    &kp RPAR            &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans     &kp PRINTSCREEN
-                     	      &trans    &trans      &trans              &trans    &kp DEL   &trans
+&kp GRAVE &kp N1    	 &kp N2       &kp N3  	      &kp N4      	&kp N5       &kp N6    &kp N7          &kp N8        &kp N9    	    &kp N0  &kp DEL
+&trans	  &hm LGUI EXCL  &hm LALT AT  &hm LCTRL HASH  &hm LSHFT DOLLAR  &kp PRCNT    &kp LEFT  &hm RSHFT DOWN  &hm RCTRL UP  &hm LALT RIGHT &trans  &trans
+&trans    &kp CARET 	 &kp AMPS     &kp STAR	      &kp LPAR    	&kp RPAR     &kp HOME  &kp PG_DN       &kp PG_UP     &kp END   	    &trans  &kp PRINTSCREEN
+                     	      	      &trans          &trans      	&trans       &trans    &kp DEL         &trans
 			>;
 		};
 
@@ -108,10 +108,10 @@
 // |       |       |        |   =  |   +   |   ]  |      	        | <<-  |  vv   |  ^^   |  ->> |       |       |
 //                          |       |      |      |      |  |       |      |       |       |
 			bindings = <
-&kp GRAVE &kp N1  &kp N2    &kp N3      &kp N4      &kp N5	    &kp N6  	&kp N7    &kp N8    &kp N9    &kp N0    &trans
-&trans    &trans  &trans    &kp MINUS   &kp UNDER   &kp LBKT 	    &kp LEFT	&kp DOWN  &kp UP    &kp RIGHT &trans    &trans
-&trans	  &trans  &trans    &kp EQUAL   &kp PLUS    &kp RBKT        &kp HOME	&kp PG_DN &kp PG_UP &kp END   &trans	&trans
-                            &trans      &trans      &trans          &trans      &trans    &trans
+&kp GRAVE &kp N1  &kp N2    &kp N3           &kp N4           &kp N5	   &kp N6     &kp N7          &kp N8        &kp N9    	    &kp N0  &trans
+&trans    &trans  &trans    &hm LCTRL MINUS  &hm LSHFT UNDER  &kp LBKT 	   &kp LEFT   &hm RSHFT DOWN  &hm RCTRL UP  &hm LALT RIGHT  &trans  &trans
+&trans	  &trans  &trans    &kp EQUAL        &kp PLUS         &kp RBKT     &kp HOME   &kp PG_DN       &kp PG_UP     &kp END         &trans  &trans
+                            &trans           &trans           &trans       &trans     &trans          &trans
 			>;
 		};
 
@@ -122,10 +122,10 @@
 // | VolD  |  BRiD | MStop  | MPrev |      |      |                 | EPON | EPOFF | EPTOG | USB  |  BLE  |		  |
 //                                  |      |      |      |  |       |      | OUTTOG|
 			bindings = <
-&kp C_MUTE    &kp F1       &kp F2     	&kp F3       &kp F4     &kp F5	   		&kp F6              &kp F7   	 &kp F8       &kp F9       &kp F10      &kp F11
-&kp C_VOL_UP  &kp C_BRI_UP &kp C_PP 	&kp C_NEXT   &trans		&trans			&bt BT_CLR          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-&kp C_VOL_DN  &kp C_BRI_DN &kp C_STOP 	&kp C_PREV   &trans 	&trans	        &ext_power EP_ON    &ext_power EP_OFF &ext_power EP_TOG  &out OUT_USB  &out OUT_BLE  &trans
-                                        &trans       &trans     &trans          &trans      		&trans    	 &out OUT_TOG
+&kp C_MUTE    &kp F1       &kp F2     	&kp F3       &kp F4     &kp F5     &kp F6            &kp F7   	       &kp F8       	  &kp F9       &kp F10      &kp F11
+&kp C_VOL_UP  &kp C_BRI_UP &kp C_PP 	&kp C_NEXT   &trans	&trans	   &bt BT_CLR        &bt BT_SEL 0      &bt BT_SEL 1 	  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+&kp C_VOL_DN  &kp C_BRI_DN &kp C_STOP 	&kp C_PREV   &trans 	&trans	   &ext_power EP_ON  &ext_power EP_OFF &ext_power EP_TOG  &out OUT_USB &out OUT_BLE &trans
+                                        &trans       &trans     &trans     &trans      	     &trans    	       &out OUT_TOG
 			>;
 		};
 	};

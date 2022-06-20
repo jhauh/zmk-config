@@ -1,0 +1,12 @@
+file_format: "1"
+id: sweepy
+name: Sweepy
+type: shield
+url: https://github.com/jhauh/sweepy
+requires: [pro_micro]
+exposes: []
+features:
+    - keys
+siblings:
+    - sweepy_left
+    - sweepy_right

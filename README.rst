@@ -40,3 +40,10 @@ Ferris Sweep
 
 `(KLE link) <http://www.keyboard-layout-editor.com/#/gists/7b49b1dd16d8bb93704317a0d8d27787>`_
 
+Sweepy
+++++++
+
+.. image:: ./sweepy_layout.png
+
+`(KLE link) <http://www.keyboard-layout-editor.com/#/gists/01ceab01ebeca6a7e33513c7b37b55c2>`_
+
